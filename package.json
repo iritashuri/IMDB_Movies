@@ -1,0 +1,22 @@
+{
+  "name": "movies_finder",
+  "version": "1.0.0",
+  "description": "Get information on movies that maches a string search",
+  "main": "IMDB_movies_scraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iritashuri/IMDB_Movies.git"
+  },
+  "author": "Irit Ashuri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iritashuri/IMDB_Movies/issues"
+  },
+  "homepage": "https://github.com/iritashuri/IMDB_Movies#readme",
+  "dependencies": {
+    "puppeteer": "^10.1.0"
+  }
+}
