@@ -27,14 +27,13 @@ $ npm install
 Usage:
 ```sh
 $ node IMDB_movies_scraper.js <title to search>
-i.e. -$ node IMDB_movies_scraper.js matrix
+i.e. -$ node IMDB_movies_scraper.js star trek
 ```
 
 The movie finder will look for all of the movies that contains the command line argument provided, and will write the results into a file named `movies.txt` in a pipe separated format.
 
 `movies.txt` example:
 ```sh
-The Matrix|Action, Sci-Fi|R|2h 16min|Lana Wachowski, Lilly Wachowski|
-The Matrix Reloaded|Action, Sci-Fi|R|2h 18min|Lana Wachowski, Lilly Wachowski| 
-The Matrix Revolutions|Action, Sci-Fi|R|2h 9min|Lana Wachowski, Lilly Wachowski| 
+Star Trek Beyond|Action, Adventure, Sci-Fi|PG-13|2h 2min|Justin Lin|Chris Pine, Zachary Quinto, Karl Urban 
+Star Trek Into Darkness|Action, Adventure, Sci-Fi|PG-13|2h 12min|J.J. Abrams|Chris Pine, Zachary Quinto, Zoe Saldana  
 ```
