@@ -123,7 +123,7 @@ class MovieSearcher {
 
 						return { title, genres, rating, duration, directors, stars };
 					});
-					console.log(data);
+
 					if (data) {
 						let { title, genres, rating, duration, directors, stars } = data;
 						this.movies.push(new Movie(title, genres, rating, duration, directors, stars))
