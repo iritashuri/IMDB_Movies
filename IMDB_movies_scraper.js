@@ -96,26 +96,34 @@ class MovieSearcher {
 						let stars = [];
 
 						document.querySelectorAll('[class^="PrincipalCredits__PrincipalCreditsPanelWideScreen"] [data-testid="title-pc-principal-credit"]').forEach(e => {
-							if (!e.querySelector('span')) { }
+							const span_label = e.querySelector('span[class="ipc-metadata-list-item__label"]');
+							const a_label = e.querySelector('a');
 
-							// Directors case
-							else if (e.querySelector('span').innerText === 'Directors') {
-								e.querySelectorAll('a').forEach(a => {
-									directors.push(a.innerText)
-								});
-							}
+							const insert_directors_stars = (label_txt) => {
+								let query = '[class="ipc-metadata-list-item__content-container"] a';
 
-							// Star case
-							else if (e.querySelector('span').innerText === 'Star') {
-								e.querySelectorAll('a').forEach(a => {
-									stars.push(a.innerText)
-								});
-							}
+								// Directors case
+								if (label_txt.includes('Director')) {
+									e.querySelectorAll(query).forEach(a => {
+										directors.push(a.innerText)
+									});
+								}
+
+								// Star case
+								else if (label_txt.includes('Star')) {
+									e.querySelectorAll(query).forEach(a => {
+										stars.push(a.innerText)
+									});
+								}
+							};
+
+							span_label && insert_directors_stars(span_label.innerText);
+							a_label && insert_directors_stars(a_label.innerText);
 						});
 
 						return { title, genres, rating, duration, directors, stars };
 					});
-
+					console.log(data);
 					if (data) {
 						let { title, genres, rating, duration, directors, stars } = data;
 						this.movies.push(new Movie(title, genres, rating, duration, directors, stars))
@@ -150,5 +158,3 @@ const main = () => {
 }
 
 main();
-
-
